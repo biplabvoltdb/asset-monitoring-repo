@@ -1,0 +1,65 @@
+# Helm Values for Asset Monitoring Main Pipeline
+# Deploy with: helm install asset-monitoring voltdb/volt-streams -f values-main-pipeline.yaml
+
+replicaCount: 2
+
+resources:
+  limits:
+    cpu: 2
+    memory: 4Gi
+  requests:
+    cpu: 1
+    memory: 2Gi
+
+# Horizontal Pod Autoscaling
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+streaming:
+  longRunning: true
+
+  # Pipeline class to execute
+  pipeline:
+    className: com.example.voltsp.AssetMonitoringPipeline
+
+    # Runtime configuration
+    configuration:
+      kafka:
+        bootstrap:
+          servers: "kafka.default.svc.cluster.local:9092"
+        input:
+          topic: "sensor-data"
+        consumer:
+          group: "asset-monitoring-group"
+        output:
+          topic:
+            high: "alerts-high"
+            medium: "alerts-medium"
+            critical: "alerts-critical"
+
+      voltdb:
+        host: "voltdb.default.svc.cluster.local"
+        port: 21211
+
+      pipeline:
+        parallelism: 4
+
+    # Secure configuration (optional)
+    configurationSecure: {}
+
+  # Java system properties
+  javaProperties:
+    voltsp.commit.async.timeout.ms: "30000"
+
+# Environment variables
+env:
+  - name: KAFKA_BOOTSTRAP_SERVERS
+    value: "kafka.default.svc.cluster.local:9092"
+  - name: VOLTDB_HOST
+    value: "voltdb.default.svc.cluster.local"
+  - name: VOLTDB_PORT
+    value: "21211"

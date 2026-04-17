@@ -1,0 +1,15 @@
+# Secure Configuration for Asset Monitoring Pipeline
+# Store sensitive values here (passwords, API keys, etc.)
+# Use secret interpolation: ${secret:env:VAR} or ${aws:secret-name}
+
+# Example: Kafka SASL credentials
+# kafka:
+#   properties:
+#     sasl.jaas.config: "${secret:env:KAFKA_JAAS_CONFIG}"
+#     sasl.mechanism: "PLAIN"
+#     security.protocol: "SASL_SSL"
+
+# Example: VoltDB credentials
+# voltdb:
+#   username: "${secret:env:VOLTDB_USERNAME}"
+#   password: "${secret:env:VOLTDB_PASSWORD}"

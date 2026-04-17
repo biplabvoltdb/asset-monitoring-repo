@@ -1,0 +1,1985 @@
+04-13 15:25:22 [32mINFO [m[      STREAM] 
+      ==
+       ====
+#****##*+==-     =*++#%%%####%
+  ****#*+++--= +==+++##**##
+    ++++++++--===*++*####
+      +++++++==+##*%%%##
+       #####++*###****
+         ##@@#*###**
+           @%%%%###
+             %%%#
+
+Volt Stream Processor
+version 1.6.0 built on 2025-11-20T19:30:02+0000 (#73766d6)
+
+04-13 15:25:22 [32mINFO [m[      CONFIG] Using license file: /Users/biplab/Downloads/voltsp-1.6.0/VoltActiveDataBiplab_Enterprise_XDCR_Expires-2027-02-15.xml
+04-13 15:25:22 [32mINFO [m[      CONFIG] License will expire in 308 day(s)
+04-13 15:25:22 [32mINFO [m[      STREAM] Running on 14 workers having 16 available processors
+04-13 15:25:22 [32mINFO [m[ableResolver] Configuring AWS Secret Manager for region: `us-east-1`
+04-13 15:25:23 [32mINFO [m[      STREAM] Configuration file not specified, not loading additional properties.
+04-13 15:25:23 [32mINFO [m[      STREAM] Stream initialized with pipeline 'YamlConfiguredPipeline'
+04-13 15:25:23 [32mINFO [m[      STREAM] ..loading org.voltdb.stream.api.ApiExtension extension
+04-13 15:25:24 [32mINFO [m[     METRICS] Started server at /0.0.0.0:11781.
+04-13 15:25:24 [32mINFO [m[      CONFIG] Using license file: /Users/biplab/Downloads/voltsp-1.6.0/VoltActiveDataBiplab_Enterprise_XDCR_Expires-2027-02-15.xml
+04-13 15:25:24 [32mINFO [m[    PROFILER] Profiler is disabled.
+04-13 15:25:24 [32mINFO [m[OLTDB-CLIENT] Configuring voltdb with configuration VoltDBResourceConfig[servers=[localhost:21211], client=VoltClientConfig[retry=RetryConfiguration[retries=3, backoffDelay=PT0.2S, maxBackoffDelay=PT3S], maxTransactionsPerSecond=null, maxOutstandingTransactions=null, requestTimeout=null, auth=Optional.empty, ssl=Optional.empty]]
+04-13 15:25:24 [32mINFO [m[       KAFKA] Configuring consumer with {key.deserializer=org.apache.kafka.common.serialization.ByteBufferDeserializer, value.deserializer=org.apache.kafka.common.serialization.ByteBufferDeserializer, enable.auto.commit=false, group.id=alerting-processor-group, bootstrap.servers=localhost:9092, auto.offset.reset=earliest}
+04-13 15:25:24 [32mINFO [m[       KAFKA] Consuming from '[sensor-data]'
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-10
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-11
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-12
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-8
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-6
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-14
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-13
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-9
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:24 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-alerting-processor-group-7
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = alerting-processor-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteBufferDeserializer
+
+04-13 15:25:25 [32mINFO [m[icsCollector] initializing Kafka metrics collector
+04-13 15:25:25 [32mINFO [m[ppInfoParser] Kafka version: 3.9.1
+04-13 15:25:25 [32mINFO [m[ppInfoParser] Kafka commitId: f745dfdcee2b9851
+04-13 15:25:25 [32mINFO [m[ppInfoParser] Kafka startTimeMs: 1776093925227
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:25 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Subscribed to topic(s): sensor-data
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[    Metadata] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965
+04-13 15:25:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Request joining group due to: need to re-join with the given member-id: consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Finished assignment for group at generation 2: {consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901=Assignment(partitions=[]), consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc=Assignment(partitions=[]), consumer-alerting-processor-group-12-172f0e92-0d27-4dc2-8ddd-0b76dabfec02=Assignment(partitions=[]), consumer-alerting-processor-group-6-5c9e81d6-9a4f-4b83-b3da-ffb1bb881471=Assignment(partitions=[]), consumer-alerting-processor-group-5-7ab45e84-a081-4941-8d77-2cce4421e548=Assignment(partitions=[]), consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945=Assignment(partitions=[]), consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff=Assignment(partitions=[]), consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad=Assignment(partitions=[]), consumer-alerting-processor-group-13-d6eab7bf-1129-4568-8ff6-a1bb3f8bcad2=Assignment(partitions=[]), consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797=Assignment(partitions=[]), consumer-alerting-processor-group-4-5449d75b-b8ef-48c1-8cd2-9a7cfcfdf692=Assignment(partitions=[]), consumer-alerting-processor-group-14-939f5ea8-9663-49aa-8e51-b27d4663019e=Assignment(partitions=[]), consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184=Assignment(partitions=[]), consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e=Assignment(partitions=[]), consumer-alerting-processor-group-7-3c3f6186-950a-409d-97dd-2bb24cc63d37=Assignment(partitions=[]), consumer-alerting-processor-group-2-a5dc0ed7-a4a1-41d1-8299-83c1add429db=Assignment(partitions=[]), consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50=Assignment(partitions=[]), consumer-alerting-processor-group-10-20bfe7c5-e341-4605-9b2a-3373e988ecdb=Assignment(partitions=[]), consumer-alerting-processor-group-3-3efa7a91-fb4f-4f07-91b6-15ef3eea782f=Assignment(partitions=[]), consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652=Assignment(partitions=[]), consumer-alerting-processor-group-11-b4e1e7f6-a1b2-458f-8215-2b99366d4483=Assignment(partitions=[]), consumer-alerting-processor-group-8-93e289bf-6f3c-4ac1-89ce-bc0b123fa240=Assignment(partitions=[]), consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582=Assignment(partitions=[]), consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c=Assignment(partitions=[sensor-data-0]), consumer-alerting-processor-group-1-9246fe60-73ee-4dda-a1c4-6930be13c97c=Assignment(partitions=[]), consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965=Assignment(partitions=[]), consumer-alerting-processor-group-9-dc0a8dd4-4e8c-4a32-8540-69a502fb8a6b=Assignment(partitions=[]), consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b=Assignment(partitions=[])}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad', protocol='range'}
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[sensor-data-0])
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:25:33 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Adding newly assigned partitions: sensor-data-0
+04-13 15:25:33 [32mINFO [m[onsumerUtils] Setting offset for partition sensor-data-0 to the committed offset FetchPosition{offset=3000, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+04-13 15:25:33 [33mWARN [m[DB-PROCEDURE] Failure of batchId(0): (-2)ERROR: CONSTRAINT VIOLATION Attempted violation of constraint
+Constraint Type UNIQUE, Table CatalogId SENSOR_READING
+Relevant Tuples:
+TAG_NAME               TIMESTAMP      TEMPERATURE  PRESSURE  QUALITY 
+---------------------- -------------- ------------ --------- --------
+Machine011.Sensor_039   1776085143662        49.31     27.42        1
+Machine011.Sensor_039   1776085143662        49.31     27.42        1
+    at com.example.voltdb.procedures.InsertSensorReading.run(InsertSensorReading.java:30)
+
+04-13 15:25:33 [33mWARN [m[      STREAM] Failed while processing 1 records, cause is: java.lang.NullPointerException: Cannot invoke "org.voltdb.stream.plugin.volt.api.VoltProcedureRequest.procedureName()" because "request" is null. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:25:33 [33mWARN [m[       KAFKA] Kafka source caught exception
+org.voltdb.stream.api.VoltEnvironment$OperatorNotReadyException: Sink is not available
+	at org.voltdb.stream.plugin.volt.VoltProcedureSink.callProcedure(VoltProcedureSink.java:71) ~[volt-stream-plugin-volt-1.6.0.jar:?]
+	at org.voltdb.stream.plugin.volt.VoltProcedureSink.onConsume(VoltProcedureSink.java:66) ~[volt-stream-plugin-volt-1.6.0.jar:?]
+	at org.voltdb.stream.plugin.volt.VoltProcedureSink.onConsume(VoltProcedureSink.java:24) ~[volt-stream-plugin-volt-1.6.0.jar:?]
+	at org.voltdb.stream.plugin.volt.AbstractStreamSink.consume(AbstractStreamSink.java:43) ~[volt-stream-plugin-volt-1.6.0.jar:?]
+	at org.voltdb.stream.execution.BindingSinkConsumer.consume(BindingSinkConsumer.java:43) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.plugin.javascript.JavaScriptProcessor.process(JavaScriptProcessor.java:63) ~[volt-stream-plugin-javascript-1.6.0.jar:?]
+	at org.voltdb.stream.execution.BindingFunctionConsumer.consume(BindingFunctionConsumer.java:47) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.metrics.system.UsageOperator.process(UsageOperator.java:38) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.BindingFunctionConsumer.consume(BindingFunctionConsumer.java:47) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.WorkerStage$EventsCountingConsumer.consume(WorkerStage.java:267) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.plugin.kafka.KafkaSource.consume(KafkaSource.java:96) ~[volt-stream-plugin-kafka-1.6.0.jar:?]
+	at org.voltdb.stream.plugin.kafka.KafkaSource.tryConsume(KafkaSource.java:81) ~[volt-stream-plugin-kafka-1.6.0.jar:?]
+	at org.voltdb.stream.plugin.kafka.KafkaSource.process(KafkaSource.java:74) ~[volt-stream-plugin-kafka-1.6.0.jar:?]
+	at org.voltdb.stream.execution.WorkerStage.lambda$connectOperators$1(WorkerStage.java:124) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.WorkerStage.executeTasks(WorkerStage.java:202) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.StreamStage.run(StreamStage.java:58) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.StreamStage.accept(StreamStage.java:38) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.WorkerStage.accept(WorkerStage.java:68) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.WorkerStage.accept(WorkerStage.java:28) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.WorkerLoop.executeTasks(WorkerLoop.java:193) ~[volt-stream-core-1.6.0.jar!/:?]
+	at org.voltdb.stream.execution.WorkerLoop.run(WorkerLoop.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:25:43 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 107
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:25:43 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:25:43 [33mWARN [m[      STREAM] Failed while processing 107 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:25:54 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:25:54 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:25:54 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:04 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:26:04 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:04 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:14 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:26:14 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:14 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Revoke previously assigned partitions 
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Request joining group due to: group is already rebalancing
+04-13 15:26:24 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:26:24 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:24 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Revoke previously assigned partitions sensor-data-0
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] (Re-)joining group
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Finished assignment for group at generation 3: {consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901=Assignment(partitions=[]), consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc=Assignment(partitions=[]), consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652=Assignment(partitions=[]), consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945=Assignment(partitions=[]), consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff=Assignment(partitions=[]), consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad=Assignment(partitions=[]), consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797=Assignment(partitions=[]), consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582=Assignment(partitions=[]), consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c=Assignment(partitions=[sensor-data-0]), consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184=Assignment(partitions=[]), consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e=Assignment(partitions=[]), consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965=Assignment(partitions=[]), consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b=Assignment(partitions=[]), consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50=Assignment(partitions=[])}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-10-ad897377-8134-4899-8e66-c991289e2cfc', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-7-f0664e74-9680-4531-a79c-6532db8fa582', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-14-a195fef6-b168-4080-be4e-ad4a84cb3b50', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-6-c8bfe2e3-fc2b-4064-bd98-8fcd84411d4e', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-12-c6aa30f2-4148-454d-892d-715836584cff', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-1-3dde7f45-1913-4980-a660-f3dbbe4afe7c', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-13-20554c1e-cf2c-4450-8219-5b2fcf287652', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-8-1998320a-9b5e-49d8-8cc4-fbd31dc1e184', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-3-89b14bf1-5696-436f-bc43-1b3d4aa1e797', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-9-595855ba-4256-4f91-a0ee-672a30fa26ad', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-5-9e302ac6-1c21-4cea-87f8-815833afc26b', protocol='range'}
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-10, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-2-cd99838c-e7bc-42bd-abcb-b97acb264965', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-4-65dde618-6130-4221-bc68-e2e994680901', protocol='range'}
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-7, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-alerting-processor-group-11-dec00f32-561c-40b9-9e12-493b54ed0945', protocol='range'}
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[sensor-data-0])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-12, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-6, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-14, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-1, groupId=alerting-processor-group] Adding newly assigned partitions: sensor-data-0
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-9, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-13, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-3, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-8, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-2, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Notifying assignor about the new Assignment(partitions=[])
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-4, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-5, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-alerting-processor-group-11, groupId=alerting-processor-group] Adding newly assigned partitions: 
+04-13 15:26:24 [32mINFO [m[onsumerUtils] Setting offset for partition sensor-data-0 to the committed offset FetchPosition{offset=5500, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+04-13 15:26:35 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:26:35 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:35 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:45 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:26:45 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:45 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:55 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:26:55 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:26:55 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:05 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:27:05 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:05 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:15 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:27:15 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:15 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:25 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:27:25 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:25 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:35 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:27:35 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:35 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:45 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:27:45 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:45 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:55 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:27:55 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:27:55 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:05 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:28:05 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:05 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:16 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:28:16 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:16 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:26 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:28:26 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:26 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:36 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:28:36 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:36 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:46 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:28:46 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:46 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:56 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:28:56 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:28:56 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:06 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:29:06 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:06 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:16 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:29:16 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:16 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:26 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:29:26 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:26 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:36 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:29:36 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:36 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:46 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:29:46 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:46 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:57 [33mWARN [m[yncCommitter] Got failures while committing sink - affected messages 500
+org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion
+	at org.voltdb.stream.execution.CancelableCommitResult.run(CancelableCommitResult.java:132) ~[volt-stream-core-1.6.0.jar!/:?]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.run(HashedWheelTimer.java:713) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:34) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:701) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:787) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:501) ~[volt-stream-plugin-aws-1.6.0.jar:4.1.126.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+04-13 15:29:57 [33mWARN [m[yncCommitter] Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:57 [33mWARN [m[      STREAM] Failed while processing 500 records, cause is: org.voltdb.stream.api.extension.CommitResult$CommitTimeoutException: Timed out while waiting for completion. Enable DEBUG log level for more information or override default pipeline's exception handler to process failed records.
+04-13 15:29:59 [32mINFO [m[      STREAM] Performing graceful shutdown...
+04-13 15:29:59 [32mINFO [m[      STREAM] Shutting down workers
+04-13 15:29:59 [32mINFO [m[      STREAM] Stream is closed now

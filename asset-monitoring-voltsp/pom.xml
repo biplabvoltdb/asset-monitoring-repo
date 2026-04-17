@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>asset-monitoring-voltsp</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>asset-monitoring-voltsp</name>
+  <description>VoltSP pipeline for asset monitoring and alerting</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+    <volt.stream.version>1.6.0</volt.stream.version>
+    <jackson.version>2.15.2</jackson.version>
+  </properties>
+
+  <dependencies>
+    <!-- Required for Java DSL pipeline compilation -->
+    <dependency>
+      <groupId>org.voltdb</groupId>
+      <artifactId>volt-stream-api</artifactId>
+      <version>${volt.stream.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.voltdb</groupId>
+      <artifactId>volt-stream-connectors-api</artifactId>
+      <version>${volt.stream.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- VoltDB procedure sink APIs -->
+    <dependency>
+      <groupId>org.voltdb</groupId>
+      <artifactId>volt-stream-plugin-volt-api</artifactId>
+      <version>${volt.stream.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Kafka source/sink APIs -->
+    <dependency>
+      <groupId>org.voltdb</groupId>
+      <artifactId>volt-stream-plugin-kafka-api</artifactId>
+      <version>${volt.stream.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>3.9.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- VoltDB Java client -->
+    <dependency>
+      <groupId>org.voltdb</groupId>
+      <artifactId>voltdbclient</artifactId>
+      <version>14.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Jackson for JSON parsing -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>

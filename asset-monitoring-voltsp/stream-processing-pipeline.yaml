@@ -1,0 +1,193 @@
+version: 1
+name: "asset-monitoring-stream-processor"
+
+# VoltDB connection for state storage and queries
+resources:
+  - name: "voltdb-cluster"
+    voltdb-client:
+      servers:
+        - "localhost:21211"
+
+  - name: "kafka-cluster"
+    kafka:
+      bootstrapServers:
+        - "localhost:9092"
+
+# Source: Consume sensor data from Kafka
+source:
+  kafka:
+    bootstrapServers:
+      - "localhost:9092"
+    topicNames:
+      - "sensor-data"
+    groupId: "stream-processor-group"
+
+# Stream Processing: Implement all 7 rules
+processors:
+  # Step 1: Parse sensor data
+  - javascript:
+      script: |
+        function process(kafkaRecord) {
+          try {
+            var StandardCharsets = Java.type('java.nio.charset.StandardCharsets');
+            var byteBuffer = kafkaRecord.getValue();
+            var json = StandardCharsets.UTF_8.decode(byteBuffer).toString();
+            var data = JSON.parse(json);
+
+            if (!data.tags || data.tags.length === 0) return null;
+
+            var tag = data.tags[0];
+            var tagName = tag.name;
+
+            if (!tag.results || tag.results.length === 0 || !tag.results[0].values || tag.results[0].values.length === 0) {
+              return null;
+            }
+
+            var value = tag.results[0].values[0];
+            var timestamp = value[0];
+            var temperature = value[1];
+            var quality = value[2];
+            var pressure = value.length > 3 ? value[3] : 0.0;
+
+            // Extract node_id from tag name
+            var nodeId = null;
+            if (tagName.indexOf('Machine') === 0 && tagName.indexOf('.') > 0) {
+              var machineNum = tagName.substring(7, tagName.indexOf('.'));
+              nodeId = 'machine-' + machineNum;
+            }
+
+            // Return sensor reading object with metadata
+            return {
+              tagName: tagName,
+              nodeId: nodeId,
+              timestamp: timestamp,
+              temperature: temperature,
+              pressure: pressure,
+              quality: quality
+            };
+
+          } catch (e) {
+            print("Error parsing: " + e);
+            return null;
+          }
+        }
+
+  # Step 2: Rule Processing and Alert Generation
+  - javascript:
+      script: |
+        // Rule thresholds
+        var TEMP_THRESHOLD = 50.0;
+        var PRESSURE_THRESHOLD = 30.0;
+
+        function process(sensorReading) {
+          if (!sensorReading || !sensorReading.nodeId) return sensorReading;
+
+          var alerts = [];
+
+          // Rule 1: Temperature Threshold Alert
+          if (sensorReading.temperature > TEMP_THRESHOLD) {
+            var severity = 'High';
+            var title = 'Temperature Threshold Breach';
+
+            // Rule 2: Sequential Rule - Combined breach
+            if (sensorReading.pressure > PRESSURE_THRESHOLD) {
+              title = 'Combined Temperature & Pressure Breach';
+              severity = 'High';
+            }
+
+            // Generate alert ID
+            var alertId = sensorReading.timestamp * 1000 + Math.abs(sensorReading.tagName.hashCode() % 1000);
+
+            // Create alert object
+            var alert = {
+              alertId: alertId,
+              nodeId: sensorReading.nodeId,
+              tagName: sensorReading.tagName,
+              title: title,
+              timestamp: sensorReading.timestamp,
+              severity: severity,
+              temperature: sensorReading.temperature,
+              pressure: sensorReading.pressure
+            };
+
+            alerts.push(alert);
+          }
+
+          // Attach alerts to sensor reading for downstream processing
+          sensorReading.alerts = alerts;
+          return sensorReading;
+        }
+
+# Sinks: Multi-output to VoltDB and Kafka
+sink:
+  # Fork the stream to multiple outputs
+  - type: "fork"
+    sinks:
+      # Sink 1: Insert sensor reading to VoltDB
+      - voltdb-procedure:
+          voltClientResource: "voltdb-cluster"
+          procedure: "InsertSensorReading"
+          parameters:
+            script: |
+              function getParameters(sensorReading) {
+                var Long = Java.type('java.lang.Long');
+                var Integer = Java.type('java.lang.Integer');
+
+                return [
+                  sensorReading.tagName,
+                  Long.valueOf(Math.floor(sensorReading.timestamp)),
+                  sensorReading.temperature,
+                  sensorReading.pressure,
+                  Integer.valueOf(sensorReading.quality)
+                ];
+              }
+
+      # Sink 2: Insert alerts to VoltDB (if any alerts generated)
+      - filter:
+          condition: "record.alerts && record.alerts.length > 0"
+          then:
+            voltdb-procedure:
+              voltClientResource: "voltdb-cluster"
+              procedure: "UpsertAlert"
+              parameters:
+                script: |
+                  function getParameters(sensorReading) {
+                    var Long = Java.type('java.lang.Long');
+                    var alert = sensorReading.alerts[0]; // First alert
+
+                    return [
+                      Long.valueOf(alert.alertId),
+                      alert.nodeId,
+                      alert.tagName,
+                      alert.title,
+                      Long.valueOf(Math.floor(alert.timestamp)),
+                      alert.severity
+                    ];
+                  }
+
+      # Sink 3: Publish alerts to Kafka (if any alerts generated)
+      - filter:
+          condition: "record.alerts && record.alerts.length > 0"
+          then:
+            kafka:
+              kafkaResource: "kafka-cluster"
+              topic: "alerts"
+              keySerializer: "org.apache.kafka.common.serialization.StringSerializer"
+              valueSerializer: "org.apache.kafka.common.serialization.StringSerializer"
+              parameters:
+                script: |
+                  function getKeyValue(sensorReading) {
+                    var alert = sensorReading.alerts[0];
+                    var key = alert.nodeId;
+                    var value = JSON.stringify({
+                      alertId: alert.alertId,
+                      nodeId: alert.nodeId,
+                      tagName: alert.tagName,
+                      title: alert.title,
+                      timestamp: alert.timestamp,
+                      severity: alert.severity,
+                      temperature: alert.temperature,
+                      pressure: alert.pressure
+                    });
+                    return [key, value];
+                  }

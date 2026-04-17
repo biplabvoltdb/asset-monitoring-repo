@@ -1,0 +1,3129 @@
+04-17 18:56:34 [32mINFO [m[      STREAM] 
+      ==
+       ====
+#****##*+==-     =*++#%%%####%
+  ****#*+++--= +==+++##**##
+    ++++++++--===*++*####
+      +++++++==+##*%%%##
+       #####++*###****
+         ##@@#*###**
+           @%%%%###
+             %%%#
+
+Volt Stream Processor
+version 1.7.1 built on 2026-03-16T12:19:28+0000 (#3857737)
+
+04-17 18:56:34 [32mINFO [m[      CONFIG] Using license file: /Users/biplab/Downloads/voltsp-1.7.1/VoltActiveDataBiplab_Enterprise_XDCR_Expires-2027-02-15.xml
+04-17 18:56:35 [32mINFO [m[      CONFIG] License will expire in 304d 5h 3m 24s
+04-17 18:56:35 [32mINFO [m[      CONFIG] Next license check is in 5h 3m 24s
+04-17 18:56:35 [32mINFO [m[      CONFIG] Licence is checked every 1d
+04-17 18:56:35 [32mINFO [m[      STREAM] Running on 14 workers having 16 available processors
+04-17 18:56:35 [32mINFO [m[      STREAM] Loading configuration from /Users/biplab/Download/new_bh_poc_opus/config/pipeline-config.yaml
+04-17 18:56:35 [32mINFO [m[      STREAM] Setting `.resources` with value `[{name=voltdb, voltdb-client={servers=[${env:VOLTDB_SERVERS:localhost:21212}]}}]`
+04-17 18:56:35 [32mINFO [m[      STREAM] Stream initialized with pipeline 'AssetMonitoringPipeline'
+04-17 18:56:36 [32mINFO [m[      STREAM] ..loading org.voltdb.stream.api.ApiExtension extension
+04-17 18:56:36 [32mINFO [m[     METRICS] Started server at /0.0.0.0:17781.
+04-17 18:56:36 [32mINFO [m[      CONFIG] Using license file: /Users/biplab/Downloads/voltsp-1.7.1/VoltActiveDataBiplab_Enterprise_XDCR_Expires-2027-02-15.xml
+04-17 18:56:36 [32mINFO [m[    PROFILER] Profiler is disabled.
+04-17 18:56:38 [32mINFO [m[       KAFKA] Consuming from '[sensor-events]'
+04-17 18:56:38 [32mINFO [m[       KAFKA] Consuming from '[sensor-events]'
+04-17 18:56:38 [32mINFO [m[       KAFKA] Configuring consumer with {key.deserializer=org.apache.kafka.common.serialization.StringDeserializer, value.deserializer=org.apache.kafka.common.serialization.StringDeserializer, enable.auto.commit=false, max.poll.records=10000, group.id=bh-asset-monitor, bootstrap.servers=localhost:9092, auto.offset.reset=latest}
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-11
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-12
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-9
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-14
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-7
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-8
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-13
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-10
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[nsumerConfig] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-bh-asset-monitor-6
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = bh-asset-monitor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 10000
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+04-17 18:56:38 [32mINFO [m[icsCollector] initializing Kafka metrics collector
+04-17 18:56:38 [32mINFO [m[ppInfoParser] Kafka version: 3.9.1
+04-17 18:56:38 [32mINFO [m[ppInfoParser] Kafka commitId: f745dfdcee2b9851
+04-17 18:56:38 [32mINFO [m[ppInfoParser] Kafka startTimeMs: 1776432398783
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[afkaConsumer] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Subscribed to topic(s): sensor-events
+04-17 18:56:38 [32mINFO [m[       KAFKA] Configuring producer with {retries=0, value.serializer=org.apache.kafka.common.serialization.StringSerializer, batch.size=1048576, acks=1, bootstrap.servers=localhost:9092, send.buffer.bytes=33554432, buffer.memory=33554432, key.serializer=org.apache.kafka.common.serialization.StringSerializer, linger.ms=1000}
+04-17 18:56:38 [32mINFO [m[       KAFKA] Producing to 'alert'
+04-17 18:56:38 [32mINFO [m[oducerConfig] Idempotence will be disabled because retries is set to 0.
+04-17 18:56:38 [32mINFO [m[oducerConfig] Idempotence will be disabled because acks is set to 1, not set to 'all'.
+04-17 18:56:38 [32mINFO [m[oducerConfig] Idempotence will be disabled because acks is set to 1, not set to 'all'.
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-2
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-6
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-14
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-11
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-9
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-13
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-3
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-4
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-5
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-12
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-7
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-10
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:38 [32mINFO [m[oducerConfig] ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 1048576
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-8
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 33554432
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-5] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-10] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-11] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-8] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-7] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-14] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-3] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-4] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-6] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-13] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-9] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-12] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-1] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Producer clientId=producer-2] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[    Metadata] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Cluster ID: RApZ6dlKTNi94nGivVok-A
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] (Re-)joining group
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-11-c04a33bc-7979-4c40-90e9-3f8357f9958a
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-10-043f245b-5ebf-45c3-acd1-e99f5e943c64
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-6-37a11d17-45a4-427c-8833-0e1b605445bb
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-3-f6e50a03-6075-45c6-95b6-957659885d29
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-5-498b8c16-f1c0-4718-98d3-5489f68edb32
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-12-e0d4634a-1146-496f-aa05-0a5604e57ac4
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-8-467da164-e6b4-4f82-9017-d728534ae249
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-7-58f00e5d-c193-4d2d-8c28-a3c76d0f636e
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-13-a3e36fb2-978c-40f0-9534-2cfcfe9de0b8
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-1-ea15f579-7440-495c-9e0b-5d8ffa84a917
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-4-fef95ea3-a854-401d-9a80-1dc47350c803
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-14-ae66cf44-52e1-46ce-a45b-bdaa54832ce3
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-9-d70a48b0-5f2d-405b-a5dc-fe80f51f3564
+04-17 18:56:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Request joining group due to: need to re-join with the given member-id: consumer-bh-asset-monitor-2-eb1f8b0d-f10c-4447-b2c8-1f8552aa55aa
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-5-498b8c16-f1c0-4718-98d3-5489f68edb32', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-7-58f00e5d-c193-4d2d-8c28-a3c76d0f636e', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-10-043f245b-5ebf-45c3-acd1-e99f5e943c64', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-6-37a11d17-45a4-427c-8833-0e1b605445bb', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-4-fef95ea3-a854-401d-9a80-1dc47350c803', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-12-e0d4634a-1146-496f-aa05-0a5604e57ac4', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-11-c04a33bc-7979-4c40-90e9-3f8357f9958a', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-13-a3e36fb2-978c-40f0-9534-2cfcfe9de0b8', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-9-d70a48b0-5f2d-405b-a5dc-fe80f51f3564', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-8-467da164-e6b4-4f82-9017-d728534ae249', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-1-ea15f579-7440-495c-9e0b-5d8ffa84a917', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-3-f6e50a03-6075-45c6-95b6-957659885d29', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-14-ae66cf44-52e1-46ce-a45b-bdaa54832ce3', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Successfully joined group with generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-2-eb1f8b0d-f10c-4447-b2c8-1f8552aa55aa', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Finished assignment for group at generation 2: {consumer-bh-asset-monitor-8-467da164-e6b4-4f82-9017-d728534ae249=Assignment(partitions=[]), consumer-bh-asset-monitor-10-043f245b-5ebf-45c3-acd1-e99f5e943c64=Assignment(partitions=[sensor-events-1]), consumer-bh-asset-monitor-13-a3e36fb2-978c-40f0-9534-2cfcfe9de0b8=Assignment(partitions=[sensor-events-4]), consumer-bh-asset-monitor-14-ae66cf44-52e1-46ce-a45b-bdaa54832ce3=Assignment(partitions=[sensor-events-5]), consumer-bh-asset-monitor-7-58f00e5d-c193-4d2d-8c28-a3c76d0f636e=Assignment(partitions=[sensor-events-11]), consumer-bh-asset-monitor-12-e0d4634a-1146-496f-aa05-0a5604e57ac4=Assignment(partitions=[sensor-events-3]), consumer-bh-asset-monitor-11-c04a33bc-7979-4c40-90e9-3f8357f9958a=Assignment(partitions=[sensor-events-2]), consumer-bh-asset-monitor-9-d70a48b0-5f2d-405b-a5dc-fe80f51f3564=Assignment(partitions=[]), consumer-bh-asset-monitor-5-498b8c16-f1c0-4718-98d3-5489f68edb32=Assignment(partitions=[sensor-events-9]), consumer-bh-asset-monitor-1-ea15f579-7440-495c-9e0b-5d8ffa84a917=Assignment(partitions=[sensor-events-0]), consumer-bh-asset-monitor-6-37a11d17-45a4-427c-8833-0e1b605445bb=Assignment(partitions=[sensor-events-10]), consumer-bh-asset-monitor-2-eb1f8b0d-f10c-4447-b2c8-1f8552aa55aa=Assignment(partitions=[sensor-events-6]), consumer-bh-asset-monitor-3-f6e50a03-6075-45c6-95b6-957659885d29=Assignment(partitions=[sensor-events-7]), consumer-bh-asset-monitor-4-fef95ea3-a854-401d-9a80-1dc47350c803=Assignment(partitions=[sensor-events-8])}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-1-ea15f579-7440-495c-9e0b-5d8ffa84a917', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-12-e0d4634a-1146-496f-aa05-0a5604e57ac4', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-7-58f00e5d-c193-4d2d-8c28-a3c76d0f636e', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-13-a3e36fb2-978c-40f0-9534-2cfcfe9de0b8', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-10-043f245b-5ebf-45c3-acd1-e99f5e943c64', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-14-ae66cf44-52e1-46ce-a45b-bdaa54832ce3', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-11-c04a33bc-7979-4c40-90e9-3f8357f9958a', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-4-fef95ea3-a854-401d-9a80-1dc47350c803', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-5-498b8c16-f1c0-4718-98d3-5489f68edb32', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-2-eb1f8b0d-f10c-4447-b2c8-1f8552aa55aa', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-6-37a11d17-45a4-427c-8833-0e1b605445bb', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-9-d70a48b0-5f2d-405b-a5dc-fe80f51f3564', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-8-467da164-e6b4-4f82-9017-d728534ae249', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Successfully synced group in generation Generation{generationId=2, memberId='consumer-bh-asset-monitor-3-f6e50a03-6075-45c6-95b6-957659885d29', protocol='range'}
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-5])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-9])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-1])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-7])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-11])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-2])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-3])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-4])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-0])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-8])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-10])
+04-17 18:57:12 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Notifying assignor about the new Assignment(partitions=[sensor-events-6])
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Adding newly assigned partitions: 
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Adding newly assigned partitions: 
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-2
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-5
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-3
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-9
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-0
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-11
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-7
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-1
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-10
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-6
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-4
+04-17 18:57:12 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Adding newly assigned partitions: sensor-events-8
+04-17 18:57:12 [32mINFO [m[onsumerUtils] Setting offset for partition sensor-events-8 to the committed offset FetchPosition{offset=17875, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+04-17 18:57:12 [32mINFO [m[onsumerUtils] Setting offset for partition sensor-events-3 to the committed offset FetchPosition{offset=19198, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+04-17 19:16:48 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:16:48 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-4-fef95ea3-a854-401d-9a80-1dc47350c803 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:16:48 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:16:48 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:16:49 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:16:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-2-eb1f8b0d-f10c-4447-b2c8-1f8552aa55aa sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:16:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:16:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:50 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:51 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:51 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:51 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:16:51 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] Revoke previously assigned partitions 
+04-17 19:16:51 [32mINFO [m[tenerInvoker] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] Revoke previously assigned partitions 
+04-17 19:16:51 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-8, groupId=bh-asset-monitor] (Re-)joining group
+04-17 19:16:51 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-9, groupId=bh-asset-monitor] (Re-)joining group
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:03 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:09 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:15 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:19 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:26 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:36 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:38 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:17:38 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-7-58f00e5d-c193-4d2d-8c28-a3c76d0f636e sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:17:38 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:17:38 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:17:39 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-12-e0d4634a-1146-496f-aa05-0a5604e57ac4 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:40 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:46 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:52 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:17:56 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:17:59 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:04 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:06 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:09 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:17 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:19 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:24 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:18:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-10-043f245b-5ebf-45c3-acd1-e99f5e943c64 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:18:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:18:24 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-10, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:18:26 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:27 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:18:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-5-498b8c16-f1c0-4718-98d3-5489f68edb32 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:18:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:18:27 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-5, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:36 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:38 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:44 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:18:44 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-11-c04a33bc-7979-4c40-90e9-3f8357f9958a sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:18:44 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:18:44 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-11, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:18:46 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:48 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:49 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:18:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-13-a3e36fb2-978c-40f0-9534-2cfcfe9de0b8 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:18:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:18:49 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-13, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:18:51 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:53 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:53 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:53 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:53 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:18:56 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:58 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:18:59 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:01 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:05 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:05 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:05 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:06 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:06 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:08 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:09 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:11 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:16 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:18 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:19 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:20 [33mWARN [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+04-17 19:19:20 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Member consumer-bh-asset-monitor-1-ea15f579-7440-495c-9e0b-5d8ffa84a917 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to consumer poll timeout has expired.
+04-17 19:19:20 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Resetting generation and member id due to: consumer pro-actively leaving the group
+04-17 19:19:20 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-1, groupId=bh-asset-monitor] Request joining group due to: consumer pro-actively leaving the group
+04-17 19:19:21 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:26 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:28 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:29 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:30 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:30 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:30 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:31 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:36 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:38 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-7, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:39 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-4, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:41 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-12, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group
+04-17 19:19:42 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-6, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:42 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-14, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:42 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-3, groupId=bh-asset-monitor] Request joining group due to: group is already rebalancing
+04-17 19:19:46 [32mINFO [m[rCoordinator] [Consumer clientId=consumer-bh-asset-monitor-2, groupId=bh-asset-monitor] Failing OffsetCommit request since the consumer is not part of an active group

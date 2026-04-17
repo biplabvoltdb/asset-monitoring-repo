@@ -1,0 +1,120 @@
+version: 1
+name: "sensor-alerting-pipeline"
+
+# VoltDB client resource
+resources:
+  - name: "voltdb-primary"
+    voltdb-client:
+      servers:
+        - "localhost:21211"
+
+# Consume from Kafka
+source:
+  kafka:
+    bootstrapServers:
+      - "localhost:9092"
+    topicNames:
+      - "sensor-data"
+    groupId: "alerting-processor-group"
+
+# Stream Processing with Rules
+processors:
+  - javascript:
+      script: |
+        // Rule thresholds
+        var TEMP_THRESHOLD = 50.0;
+        var PRESSURE_THRESHOLD = 30.0;
+
+        // Simple hash function for JavaScript strings
+        function hashCode(str) {
+          var hash = 0;
+          for (var i = 0; i < str.length; i++) {
+            var char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+          }
+          return Math.abs(hash);
+        }
+
+        function process(kafkaRecord) {
+          try {
+            // Parse Kafka message
+            var StandardCharsets = Java.type('java.nio.charset.StandardCharsets');
+            var byteBuffer = kafkaRecord.getValue();
+            var json = StandardCharsets.UTF_8.decode(byteBuffer).toString();
+            var data = JSON.parse(json);
+
+            if (!data.tags || data.tags.length === 0) return null;
+
+            var tag = data.tags[0];
+            var tagName = tag.name;
+
+            if (!tag.results || tag.results.length === 0) return null;
+            if (!tag.results[0].values || tag.results[0].values.length === 0) return null;
+
+            var value = tag.results[0].values[0];
+            var timestamp = value[0];
+            var temperature = value[1];
+            var quality = value[2];
+            var pressure = value.length > 3 ? value[3] : 0.0;
+
+            // Extract node_id
+            var nodeId = null;
+            if (tagName.indexOf('Machine') === 0 && tagName.indexOf('.') > 0) {
+              var machineNum = tagName.substring(7, tagName.indexOf('.'));
+              nodeId = 'machine-' + machineNum;
+            }
+
+            if (!nodeId) return null;
+
+            // Convert types
+            var Long = Java.type('java.lang.Long');
+            var Integer = Java.type('java.lang.Integer');
+            var timestampLong = Long.valueOf(Math.floor(timestamp));
+            var qualityInt = Integer.valueOf(Math.floor(quality));
+
+            // RULE PROCESSING
+            // Rule 1 & 2: Check temperature and pressure thresholds
+            var alertNeeded = false;
+            var severity = 'High';
+            var title = '';
+
+            if (temperature > TEMP_THRESHOLD) {
+              alertNeeded = true;
+              title = 'Temperature Threshold Breach';
+
+              // Rule 2: Sequential rule - combined breach
+              if (pressure > PRESSURE_THRESHOLD) {
+                title = 'Combined Temperature & Pressure Breach';
+              }
+            }
+
+            // Prepare VoltDB procedure call
+            var VoltProcedureRequest = Java.type('org.voltdb.stream.plugin.volt.api.VoltProcedureRequest');
+
+            if (alertNeeded) {
+              // Call procedure that inserts sensor reading AND alert
+              var alertId = timestamp * 1000 + (hashCode(tagName) % 1000);
+              var alertIdLong = Long.valueOf(Math.floor(alertId));
+
+              // Call combined procedure
+              return new VoltProcedureRequest("ProcessSensorWithAlert",
+                [tagName, timestampLong, temperature, pressure, qualityInt,
+                 alertIdLong, nodeId, title, severity]);
+
+            } else {
+              // Just insert sensor reading (no alert)
+              return new VoltProcedureRequest("InsertSensorReading",
+                [tagName, timestampLong, temperature, pressure, qualityInt]);
+            }
+
+          } catch (e) {
+            print("Error in stream processing: " + e);
+            return null;
+          }
+        }
+
+# Sink to VoltDB
+sink:
+  voltdb-procedure:
+    voltClientResource: "voltdb-primary"

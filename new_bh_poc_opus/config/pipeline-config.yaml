@@ -1,0 +1,24 @@
+# VoltSP runtime configuration for the BH asset-monitoring PoC.
+# Pass to the CLI with: voltsp --config config/pipeline-config.yaml com.bh.poc.pipeline.AssetMonitoringPipeline
+#
+# The "voltdb" voltdb-client resource is the handle used by the VoltSP processor
+# to perform metadata checks, threshold lookups, rule-window queries and to write
+# alerts to the ALERT table. The processor opens a matching VoltDB client using
+# voltdb.servers / voltdb.user / voltdb.password below.
+
+resources:
+  - name: voltdb
+    voltdb-client:
+      servers:
+        - "${env:VOLTDB_SERVERS:localhost:21212}"
+      # Optional SASL/SSL can be added here; see VoltSP docs.
+
+# Runtime values read by AssetMonitoringPipeline via findByPath(...)
+kafka:
+  bootstrap:    "${env:KAFKA_BOOTSTRAP:localhost:9092}"
+  sourceTopic:  "${env:SOURCE_TOPIC:sensor-events}"
+  alertTopic:   "${env:ALERT_TOPIC:alert}"
+  groupId:      "${env:KAFKA_GROUP:bh-asset-monitor}"
+
+voltdb:
+  servers:      "${env:VOLTDB_SERVERS:localhost:21212}"

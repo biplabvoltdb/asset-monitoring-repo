@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.bh.poc</groupId>
+  <artifactId>bh-asset-monitoring-poc</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>bh-asset-monitoring-poc</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+    <volt.stream.version>1.6.0</volt.stream.version>
+    <voltdb.version>14.0.1</voltdb.version>
+    <jackson.version>2.17.2</jackson.version>
+    <kafka.version>3.9.1</kafka.version>
+  </properties>
+
+  <dependencies>
+    <!-- VoltSP core -->
+    <dependency><groupId>org.voltdb</groupId><artifactId>volt-stream-api</artifactId><version>${volt.stream.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.voltdb</groupId><artifactId>volt-stream-connectors-api</artifactId><version>${volt.stream.version}</version><scope>provided</scope></dependency>
+    <!-- VoltSP plugins used -->
+    <dependency><groupId>org.voltdb</groupId><artifactId>volt-stream-plugin-volt-api</artifactId><version>${volt.stream.version}</version><scope>provided</scope></dependency>
+    <dependency><groupId>org.voltdb</groupId><artifactId>volt-stream-plugin-kafka-api</artifactId><version>${volt.stream.version}</version><scope>provided</scope></dependency>
+    <!-- VoltDB client (used inside the Java processor via the voltdb-client resource) -->
+    <dependency><groupId>org.voltdb</groupId><artifactId>voltdbclient</artifactId><version>${voltdb.version}</version><scope>provided</scope></dependency>
+    <!-- VoltDB server jar (contains VoltProcedure, SQLStmt, VoltTable etc.) - installed locally -->
+    <dependency><groupId>org.voltdb</groupId><artifactId>voltdb</artifactId><version>${voltdb.version}</version><scope>provided</scope></dependency>
+    <!-- Kafka client (for simulator) -->
+    <dependency><groupId>org.apache.kafka</groupId><artifactId>kafka-clients</artifactId><version>${kafka.version}</version></dependency>
+    <!-- JSON -->
+    <dependency><groupId>com.fasterxml.jackson.core</groupId><artifactId>jackson-databind</artifactId><version>${jackson.version}</version></dependency>
+  </dependencies>
+
+  <build>
+    <finalName>bh-asset-monitoring-poc</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals><goal>shade</goal></goals>
+            <configuration>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <shadedClassifierName>all</shadedClassifierName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

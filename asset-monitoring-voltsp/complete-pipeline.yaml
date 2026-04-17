@@ -1,0 +1,61 @@
+version: 1
+name: "complete-sensor-alerting"
+
+resources:
+  - name: "voltdb"
+    voltdb-client:
+      servers: ["localhost:21211"]
+
+source:
+  kafka:
+    bootstrapServers: ["localhost:9092"]
+    topicNames: ["sensor-data"]
+    groupId: "complete-processor"
+    kafkaConfig:
+      auto.offset.reset: "latest"
+
+processors:
+  - javascript:
+      script: |
+        function hashCode(s){var h=0;for(var i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i)|0;return Math.abs(h);}
+        var TEMP=50.0,PRESS=30.0;
+        function process(kr){
+          try{
+            var SC=Java.type('java.nio.charset.StandardCharsets');
+            var d=JSON.parse(SC.UTF_8.decode(kr.getValue()).toString());
+            if(!d.tags||!d.tags[0].results||!d.tags[0].results[0].values)return null;
+            var t=d.tags[0],v=t.results[0].values[0];
+            var tn=t.name,ts=v[0],temp=v[1],qual=v[2],press=v.length>3?v[3]:0.0;
+            var nid=null;
+            if(tn.indexOf('Machine')===0){var m=tn.substring(7,tn.indexOf('.'));nid='machine-'+m;}
+            if(!nid)return null;
+            var alert=temp>TEMP,sev='High',title='Temperature Threshold Breach';
+            if(alert&&press>PRESS)title='Combined Temperature & Pressure Breach';
+            return {tagName:tn,nodeId:nid,timestamp:ts,temperature:temp,pressure:press,quality:qual,
+                    alertNeeded:alert,alertId:alert?ts*1000+hashCode(tn)%1000:0,alertTitle:title,alertSeverity:sev};
+          }catch(e){print("Error: "+e);return null;}
+        }
+
+sink:
+  - type: "fork"
+    sinks:
+    - voltdb-procedure:
+        voltClientResource: "voltdb"
+        parameters:
+          script: |
+            function getParameters(r){
+              var L=Java.type('java.lang.Long'),I=Java.type('java.lang.Integer');
+              return{procedure:"InsertSensorReading",parameters:[r.tagName,L.valueOf(Math.floor(r.timestamp)),r.temperature,r.pressure,I.valueOf(r.quality)]};
+            }
+    - javascript:
+        script: |
+          function process(r){return r.alertNeeded?r:null;}
+        then:
+          voltdb-procedure:
+            voltClientResource: "voltdb"
+            parameters:
+              script: |
+                function getParameters(r){
+                  var L=Java.type('java.lang.Long');
+                  return{procedure:"UpsertAlert",parameters:[r.nodeId,L.valueOf(r.alertId),r.tagName,r.alertTitle,L.valueOf(Math.floor(r.timestamp)),r.alertSeverity]};
+                }

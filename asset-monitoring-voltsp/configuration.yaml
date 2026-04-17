@@ -1,0 +1,18 @@
+# VoltSP Runtime Configuration for Asset Monitoring Pipeline
+# This file contains environment-specific values and resource definitions
+
+# VoltDB client resource configuration
+resources:
+  - name: "primary-cluster"
+    voltdb-client:
+      servers:
+        - "localhost:21211"
+
+# Pipeline-specific configuration values
+kafka:
+  bootstrap:
+    servers: "localhost:9092"
+  input:
+    topic: "sensor-data"
+  consumer:
+    group: "asset-monitoring-group"

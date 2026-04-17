@@ -1,0 +1,17 @@
+# VoltSP Runtime Configuration for Rolling Window Pipeline
+# This pipeline runs scheduled tasks for window analysis and metrics computation
+
+# VoltDB Connection
+voltdb:
+  host: "${env:VOLTDB_HOST:localhost}"
+  port: ${env:VOLTDB_PORT:21211}
+
+# Window Analysis Settings
+window:
+  duration:
+    ms: 600000  # 10 minutes in milliseconds
+
+# Schedule Settings
+schedule:
+  interval:
+    seconds: 300  # Run every 5 minutes

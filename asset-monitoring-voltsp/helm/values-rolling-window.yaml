@@ -1,0 +1,44 @@
+# Helm Values for Rolling Window Analysis Pipeline
+# Deploy with: helm install rolling-window voltdb/volt-streams -f values-rolling-window.yaml
+
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 1
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+streaming:
+  longRunning: true
+
+  # Pipeline class to execute
+  pipeline:
+    className: com.example.voltsp.RollingWindowPipeline
+
+    # Runtime configuration
+    configuration:
+      voltdb:
+        host: "voltdb.default.svc.cluster.local"
+        port: 21211
+
+      window:
+        duration:
+          ms: 600000  # 10 minutes
+
+      schedule:
+        interval:
+          seconds: 300  # Every 5 minutes
+
+    configurationSecure: {}
+
+  javaProperties:
+    voltsp.commit.async.timeout.ms: "30000"
+
+env:
+  - name: VOLTDB_HOST
+    value: "voltdb.default.svc.cluster.local"
+  - name: VOLTDB_PORT
+    value: "21211"

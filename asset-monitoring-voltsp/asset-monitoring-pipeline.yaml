@@ -1,0 +1,72 @@
+version: 1
+name: "asset-monitoring-pipeline"
+
+# VoltDB client resource
+resources:
+  - name: "primary-cluster"
+    voltdb-client:
+      servers:
+        - "localhost:21211"
+
+# Consume from Kafka
+source:
+  kafka:
+    bootstrapServers:
+      - "localhost:9092"
+    topicNames:
+      - "sensor-data"
+    groupId: "asset-monitoring-group"
+
+# Parse JSON and map to VoltProcedureRequest
+processors:
+  - javascript:
+      script: |
+        function process(kafkaRecord) {
+          try {
+            // Extract ByteBuffer and convert to string
+            var StandardCharsets = Java.type('java.nio.charset.StandardCharsets');
+            var byteBuffer = kafkaRecord.getValue();
+            var json = StandardCharsets.UTF_8.decode(byteBuffer).toString();
+            var data = JSON.parse(json);
+            
+            // Parse sensor data structure
+            if (data.tags && data.tags.length > 0) {
+              var tag = data.tags[0];
+              var tagName = tag.name;
+              
+              if (tag.results && tag.results.length > 0) {
+                var result = tag.results[0];
+                
+                if (result.values && result.values.length > 0) {
+                  var value = result.values[0];
+                  
+                  var timestamp = value[0];
+                  var temperature = value[1];
+                  var quality = value[2];
+                  var pressure = value.length > 3 ? value[3] : 0.0;
+
+                  // Convert types for VoltDB procedure
+                  var Long = Java.type('java.lang.Long');
+                  var Integer = Java.type('java.lang.Integer');
+                  var timestampLong = Long.valueOf(Math.floor(timestamp));
+                  var qualityInt = Integer.valueOf(Math.floor(quality));
+
+                  // Return VoltProcedureRequest - using fast insert procedure
+                  var VoltProcedureRequest = Java.type('org.voltdb.stream.plugin.volt.api.VoltProcedureRequest');
+                  return new VoltProcedureRequest("InsertSensorReading",
+                    [tagName, timestampLong, temperature, pressure, qualityInt]);
+                }
+              }
+            }
+            
+            return null; // Skip if parsing fails
+          } catch (e) {
+            print("Error parsing sensor data: " + e);
+            return null;
+          }
+        }
+
+# Call VoltDB procedure
+sink:
+  voltdb-procedure:
+    voltClientResource: "primary-cluster"

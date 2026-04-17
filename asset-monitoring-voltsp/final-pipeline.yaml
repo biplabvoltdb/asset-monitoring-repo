@@ -1,0 +1,40 @@
+version: 1
+name: "sensor-alert-final"
+resources:
+  - name: "voltdb"
+    voltdb-client:
+      servers: ["localhost:21211"]
+source:
+  kafka:
+    bootstrapServers: ["localhost:9092"]
+    topicNames: ["sensor-data"]
+    groupId: "final-processor"
+    kafkaConfig:
+      auto.offset.reset: "latest"
+processors:
+  - javascript:
+      script: |
+        function hashCode(s){var h=0;for(var i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i)|0;return Math.abs(h);}
+        var TEMP=50.0,PRESS=30.0;
+        function process(kr){
+          try{
+            var SC=Java.type('java.nio.charset.StandardCharsets'),L=Java.type('java.lang.Long'),I=Java.type('java.lang.Integer'),VPR=Java.type('org.voltdb.stream.plugin.volt.api.VoltProcedureRequest');
+            var d=JSON.parse(SC.UTF_8.decode(kr.getValue()).toString());
+            if(!d.tags||!d.tags[0].results||!d.tags[0].results[0].values)return null;
+            var t=d.tags[0],v=t.results[0].values[0];
+            var tn=t.name,ts=v[0],temp=v[1],qual=v[2],press=v.length>3?v[3]:0.0,nid=null;
+            if(tn.indexOf('Machine')===0)nid='machine-'+tn.substring(7,tn.indexOf('.'));
+            if(!nid)return null;
+            var req=new VPR("InsertSensorReading",[tn,L.valueOf(Math.floor(ts)),temp,press,I.valueOf(qual)]);
+            if(temp>TEMP){
+              var title='Temperature Threshold Breach';
+              if(press>PRESS)title='Combined Temperature & Pressure Breach';
+              var aid=ts*1000+hashCode(tn)%1000;
+              req.queueFollowup(new VPR("UpsertAlert",[nid,L.valueOf(aid),tn,title,L.valueOf(Math.floor(ts)),'High']));
+            }
+            return req;
+          }catch(e){print("Err: "+e);return null;}
+        }
+sink:
+  voltdb-procedure:
+    voltClientResource: "voltdb"
