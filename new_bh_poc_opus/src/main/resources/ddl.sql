@@ -108,6 +108,19 @@ DROP PROCEDURE com.bh.poc.procedures.EvaluateWindow IF EXISTS;
 CREATE PROCEDURE PARTITION ON TABLE SENSOR_WINDOW COLUMN TAG_NAME
     FROM CLASS com.bh.poc.procedures.EvaluateWindow;
 
+-- Rollup counter update (partitioned on NODE_ID for HIERARCHY_ROLLUP)
+DROP PROCEDURE com.bh.poc.procedures.UpdateRollup IF EXISTS;
+CREATE PROCEDURE PARTITION ON TABLE HIERARCHY_ROLLUP COLUMN NODE_ID
+    FROM CLASS com.bh.poc.procedures.UpdateRollup;
+
+-- Rule 2 helpers (replace @AdHoc queries)
+DROP PROCEDURE com.bh.poc.procedures.GetPeerTempTag IF EXISTS;
+CREATE PROCEDURE FROM CLASS com.bh.poc.procedures.GetPeerTempTag;
+
+DROP PROCEDURE com.bh.poc.procedures.GetLatestTemp IF EXISTS;
+CREATE PROCEDURE PARTITION ON TABLE SENSOR_WINDOW COLUMN TAG_NAME
+    FROM CLASS com.bh.poc.procedures.GetLatestTemp;
+
 -- Real-time analytics (multi-partition)
 DROP PROCEDURE com.bh.poc.procedures.HierarchyRollup IF EXISTS;
 CREATE PROCEDURE FROM CLASS com.bh.poc.procedures.HierarchyRollup;

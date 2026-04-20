@@ -58,7 +58,14 @@ public final class AlertEvaluationProcessor {
                     alert.tagName, alert.alertId, alert.nodeId, alert.title,
                     alert.severity, alert.status, alert.ruleId, alert.ts, alert.value);
 
-            // 4. Return alert -> framework sinks it to Kafka "alert" topic
+            // 4. Update rollup counters (NODE_ID-partitioned, separate call to avoid cross-partition violation)
+            try {
+                c.callProcedure("UpdateRollup", alert.nodeId, alert.status, alert.ts);
+            } catch (Exception rollupEx) {
+                // best-effort; don't fail the alert for a rollup counter miss
+            }
+
+            // 5. Return alert -> framework sinks it to Kafka "alert" topic
             return alert;
         } catch (Exception e) {
             // In a real pipeline we would route to a DLQ named sink.
@@ -117,16 +124,12 @@ public final class AlertEvaluationProcessor {
 
         // Rule 2 - Sequential: pressure high, then watch temperature
         if (isPressure && ev.value > md.pressureThreshold) {
-            // 1. Resolve the peer TEMPERATURE tag for this node (multi-partition, no subquery)
-            VoltTable[] peerTagRs = c.callProcedure("@AdHoc",
-                    "SELECT TAG_NAME FROM SENSOR_TAG WHERE NODE_ID = ? AND METRIC = 'TEMPERATURE';",
-                    md.nodeId).getResults();
+            // 1. Resolve the peer TEMPERATURE tag for this node
+            VoltTable[] peerTagRs = c.callProcedure("GetPeerTempTag", md.nodeId).getResults();
             if (peerTagRs[0].advanceRow()) {
                 String peerTag = peerTagRs[0].getString(0);
                 // 2. Get the most recent temp sample for that peer tag (single-partition on TAG_NAME)
-                VoltTable[] win = c.callProcedure("@AdHoc",
-                        "SELECT TEMP FROM SENSOR_WINDOW WHERE TAG_NAME = ? ORDER BY TS DESC LIMIT 1;",
-                        peerTag).getResults();
+                VoltTable[] win = c.callProcedure("GetLatestTemp", peerTag).getResults();
                 if (win[0].advanceRow()) {
                     double t = win[0].getDouble(0);
                     if (t > md.tempHigh) {

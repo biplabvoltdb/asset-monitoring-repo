@@ -15,10 +15,10 @@ resources:
 
 # Runtime values read by AssetMonitoringPipeline via findByPath(...)
 kafka:
-  bootstrap:    "${env:KAFKA_BOOTSTRAP:localhost:9092}"
-  sourceTopic:  "${env:SOURCE_TOPIC:sensor-events}"
-  alertTopic:   "${env:ALERT_TOPIC:alert}"
-  groupId:      "${env:KAFKA_GROUP:bh-asset-monitor}"
+  bootstrap:    "localhost:9092"
+  sourceTopic:  "sensor-events"
+  alertTopic:   "alert"
+  groupId:      "bh-asset-monitor"
 
 voltdb:
-  servers:      "${env:VOLTDB_SERVERS:localhost:21212}"
+  servers:      "localhost:21212"

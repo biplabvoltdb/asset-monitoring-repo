@@ -70,8 +70,11 @@ public final class AssetMonitoringPipeline implements VoltPipeline {
                 for (SensorEvent ev : parsePayload(req.getValue())) out.consume(ev);
             })
             // 2. Rule engine: Java processor that talks to VoltDB via the voltdb-client resource.
-            //    Returns Alert or null; the framework drops null records.
-            .processWith(ruleEngine::process)
+            //    Uses VoltStreamFunction so we only emit non-null alerts downstream.
+            .processWith((VoltStreamFunction<SensorEvent, Alert>) (ev, out, ctx) -> {
+                Alert a = ruleEngine.process(ev);
+                if (a != null) out.consume(a);
+            })
             // 4. Serialise alert to JSON for Kafka sink
             .processWith(AssetMonitoringPipeline::alertToJson)
             // 5. Kafka sink - topic "alert"
@@ -110,6 +113,7 @@ public final class AssetMonitoringPipeline implements VoltPipeline {
     }
 
     static String alertToJson(Alert a) {
+        if (a == null) return null;
         try { return JSON.writeValueAsString(a); }
         catch (Exception e) { return "{\"error\":\"serialise\"}"; }
     }
