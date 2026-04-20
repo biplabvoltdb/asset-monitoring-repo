@@ -1,6 +1,9 @@
 -- Drop in reverse dependency order
 DROP PROCEDURE com.bh.poc.procedures.TopContributors        IF EXISTS;
 DROP PROCEDURE com.bh.poc.procedures.HierarchyRollup        IF EXISTS;
+DROP PROCEDURE com.bh.poc.procedures.GetLatestTemp           IF EXISTS;
+DROP PROCEDURE com.bh.poc.procedures.GetPeerTempTag          IF EXISTS;
+DROP PROCEDURE com.bh.poc.procedures.UpdateRollup            IF EXISTS;
 DROP PROCEDURE com.bh.poc.procedures.EvaluateWindow         IF EXISTS;
 DROP PROCEDURE com.bh.poc.procedures.AppendWindowSample     IF EXISTS;
 DROP PROCEDURE com.bh.poc.procedures.CloseAlert             IF EXISTS;
